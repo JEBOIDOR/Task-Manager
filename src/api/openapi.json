@@ -1,0 +1,44 @@
+{
+  "version": "3.1.0",
+  "info": {
+    "title": "task manager",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost5173",
+      "description": "Develpment server"
+    }
+  ],
+  "paths": {
+    "/user": {
+      "get": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": ""
+                  }
+                }
+              }
+            }
+          },
+          "default": {}
+        }
+      }
+    },
+    "/projects": {
+      "get": {}
+    },
+    "/project": {
+      "get": {},
+      "parameters": []
+    },
+    "/tasks": {},
+    "/task": {}
+  },
+  "components": {}
+}

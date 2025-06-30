@@ -1,0 +1,37 @@
+User: {
+ notifications: Number,
+ settings: Settings,
+ inbox: Inbox[], !PENDING
+ projects: Project[],
+ teams: Team[]
+}
+
+Project: {
+ Teams: Team[],
+ tasks: Task[],
+ 
+}
+Date {
+  timestamp: dd/mm/aa;
+  update: dd/mm/aa;
+}
+
+//si la task no esta activa entonces no se puede actualizar
+
+
+Task: {
+ id: crypto,
+ date: Date, 
+ state: boolean,
+ title: string,
+ description: string,
+ comments: Comments[],
+ assignedUsers: User[],
+ archives: Archive[],
+}
+
+
+
+crypto `${string}-${string}-${string}-${string}-${string}`
+
+estado inicial []

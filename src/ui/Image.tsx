@@ -5,9 +5,9 @@ export const Image = ({
   height,
 }: {
   src: string;
-  className: string;
-  width: string;
-  height: string;
+  className?: string;
+  width?: string;
+  height?: string;
 }) => {
   return (
     <img

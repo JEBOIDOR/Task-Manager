@@ -31,7 +31,23 @@
       }
     },
     "/projects": {
-      "get": {}
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     },
     "/project": {
       "get": {},
@@ -40,5 +56,21 @@
     "/tasks": {},
     "/task": {}
   },
-  "components": {}
+  "components": {
+    "schemas": {
+      "tasks": {},
+      "task": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "examples": {}
+  }
 }

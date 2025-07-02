@@ -1,10 +1,11 @@
 export const variants = {
   color: {
     gray: "text-gray",
-    grey: "",
-    black: "",
+    grey: "text-grey",
+    black: "text-black",
   },
   size: {
+    smr: "text-smaller",
     sm: "text-small",
     md: "text-medium",
     lg: "text-large",
@@ -29,13 +30,11 @@ export const userProfileActions = [
   {
     icon: "lets-icons:message-alt-fill",
     styles: "r-full relative bg-button",
-    indicator:
-      "r-full bottom-6 left-5 icons-userInfo f-smaller f-w-700 t-smaller",
+    indicator: "r-full top right icons-userInfo fxx-small f-w-700 t-smaller",
   },
   {
     icon: "mdi:bell",
     styles: "r-full relative bg-button",
-    indicator:
-      "r-full bottom-6 left-5 icons-userInfo f-smaller f-w-700 t-smaller",
+    indicator: "r-full top right icons-userInfo fxx-small f-w-700 t-smaller",
   },
 ];

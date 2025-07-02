@@ -6,11 +6,20 @@ export const Progressbar = ({ tasks }: { tasks: any }) => {
 
   return (
     <>
-      <Typography tag="span" size="sm" variant="gray" className="text-left">
+      <Typography
+        tag="p"
+        size="smr"
+        variant="gray"
+        align="right"
+        className="mt-3 full-w"
+      >
         {completedTasks} / {tasks.length}
       </Typography>
-      <div className="full-w h-1 mt-1 br-2 bg-no-fill br-2 overflow-h">
-        <div className="full-h icon-color" style={{ width: progress }}></div>
+      <div className="full-w h-1 br-2 bg-no-fill overflow-h">
+        <div
+          className="full-h icon-color br-2"
+          style={{ width: progress }}
+        ></div>
       </div>
     </>
   );

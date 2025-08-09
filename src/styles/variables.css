@@ -16,7 +16,9 @@
   --unselected-mail: #f1f2f7;
   --calendar-border-color: #cbcfe0;
   --main-container-bg: #f0f0f7;
-  --black-font: #000000; /*SIZES*/
+  --black-font: #000000;
+
+  /*SIZES*/
   --sm-icon {
     width: 1.25rem;
     height: 1.25rem;

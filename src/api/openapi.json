@@ -7,30 +7,281 @@
   "servers": [
     {
       "url": "http://localhost5173",
-      "description": "Develpment server"
+      "description": "Development server"
     }
   ],
   "paths": {
-    "/user": {
+    "/users": {
       "get": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": ""
+                    "$ref": "#/components/schemas/user"
+                  }
+                },
+                "examples": {
+                  "x-examples": {
+                    "$ref": "#/components/examples/users"
                   }
                 }
               }
             }
           },
           "default": {}
-        }
-      }
+        },
+        "operationId": "get all users",
+        "description": "retrieve all users",
+        "tags": ["users_list"]
+      },
+      "post": {
+        "summary": "create user",
+        "responses": {
+          "201": {
+            "description": "user created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/user"
+                },
+                "x-examples": {
+                  "example-1": {
+                    "id": "string",
+                    "full_name": "string",
+                    "notifications": [null],
+                    "settings": {
+                      "theme": "string"
+                    },
+                    "projects": [null],
+                    "teams": [null]
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/user"
+                },
+                "x-examples": {
+                  "example-1": {
+                    "id": "string",
+                    "full_name": "string",
+                    "notifications": [null],
+                    "settings": {
+                      "theme": "string"
+                    },
+                    "projects": [null],
+                    "teams": [null]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "createOneUser",
+        "description": "",
+        "tags": ["users_list"]
+      },
+      "parameters": []
+    },
+    "/users/{userId}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/user"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "id": "string",
+                      "full_name": "string",
+                      "notifications": [null],
+                      "settings": {
+                        "theme": "string"
+                      },
+                      "projects": [null],
+                      "teams": [null]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "operationId": "",
+        "description": "",
+        "tags": []
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "operationId": "",
+        "description": "",
+        "tags": ["user_item", "user_list"]
+      },
+      "put": {
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/user"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "id": "string",
+                      "full_name": "string",
+                      "notifications": [null],
+                      "settings": {
+                        "theme": "string"
+                      },
+                      "projects": [null],
+                      "teams": [null]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/user"
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "id": "string",
+                    "full_name": "string",
+                    "notifications": [null],
+                    "settings": {
+                      "theme": "string"
+                    },
+                    "projects": [null],
+                    "teams": [null]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "updateUserItem",
+        "description": "update the information in existing user",
+        "tags": ["user_item", "user_list"]
+      },
+      "parameters": []
     },
     "/projects": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/examples/project"
+                  }
+                },
+                "examples": {
+                  "x-examples": {
+                    "$ref": "#/components/examples/projects"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "operationId": "",
+        "description": "",
+        "tags": []
+      },
+      "post": {
+        "summary": "create project",
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/project"
+                },
+                "x-examples": {
+                  "example-1": {
+                    "id": "string",
+                    "createdAt": "string",
+                    "name": "string",
+                    "teams": [null],
+                    "tasks": [null],
+                    "color": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/project"
+                },
+                "x-examples": {
+                  "example-1": {
+                    "id": "string",
+                    "createdAt": "string",
+                    "name": "string",
+                    "teams": [null],
+                    "tasks": [null],
+                    "color": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "createOneProject",
+        "description": "create project successfully",
+        "tags": ["projet_item", "project_list"]
+      },
+      "parameters": []
+    },
+    "/projects/{projectId}": {
       "get": {
         "responses": {
           "200": {
@@ -43,34 +294,1946 @@
                     "$ref": "#/components/schemas"
                   }
                 }
+              },
+              "examples": {
+                "x-examples": {}
+              }
+            }
+          }
+        },
+        "operationId": "getProject",
+        "description": "get project item",
+        "tags": ["project_list", "projet_item"]
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "operationId": "",
+        "description": "",
+        "tags": []
+      },
+      "put": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "operationId": "updateProjectItem",
+        "description": "update the information in existing project",
+        "tags": ["project_list", "projet_item"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/project"
+              },
+              "x-examples": {
+                "id": "string",
+                "createdAt": "string",
+                "name": "string",
+                "teams": [null],
+                "tasks": [null],
+                "color": "string"
               }
             }
           }
         }
-      }
-    },
-    "/project": {
-      "get": {},
+      },
       "parameters": []
     },
-    "/tasks": {},
-    "/task": {}
+    "/tasks": {
+      "get": {
+        "summary": "retrieve all tasks",
+        "reponses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/task"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        },
+        "operationId": "getTasks",
+        "description": "retrieve all tasks",
+        "tags": ["tasks_list"]
+      },
+      "post": {
+        "summary": "create task",
+        "responses": {
+          "201": {
+            "description": "Task Created Successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/task"
+                  }
+                },
+                "x-examples": {
+                  "example-1": {
+                    "id": "string",
+                    "createdAt": "string",
+                    "name": "string",
+                    "teams": [null],
+                    "tasks": [null],
+                    "color": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/task"
+                },
+                "x-examples": {
+                  "example-1": {
+                    "id": "string",
+                    "createdAt": "string",
+                    "state": "string",
+                    "title": "string",
+                    "description": "string",
+                    "comments": [null],
+                    "assignedUsers": [null],
+                    "files": [null]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "CreateOneTask",
+        "description": "",
+        "tags": ["tasks_list"]
+      },
+      "parameters": []
+    },
+    "/taks/{taskId}": {
+      "get": {
+        "responses": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/task"
+              },
+              "x-examples": {
+                "example-1": {
+                  "id": "string",
+                  "createdAt": "string",
+                  "state": "string",
+                  "title": "string",
+                  "description": "string",
+                  "comments": [null],
+                  "assignedUsers": [null],
+                  "files": [null]
+                }
+              }
+            }
+          }
+        },
+        "operationId": "getTaskItem",
+        "description": "retieve the tasks with matching id",
+        "tags": ["tasks_list", "task_item"]
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "operationId": "deleteTaskItem",
+        "description": "delete task",
+        "tags": ["tasks_list", "task_item"]
+      },
+      "put": {
+        "responses": {
+          "200": {
+            "description": "task updated successfully"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "operationId": "updateTaskItem",
+        "description": "update task",
+        "tags": ["task_item", "tasks_list"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/task"
+              },
+              "x-examples": {
+                "example-1": {
+                  "id": "string",
+                  "createdAt": "string",
+                  "name": "string",
+                  "teams": [null],
+                  "tasks": [null],
+                  "color": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": []
+    },
+    "/notifications": {
+      "get": {
+        "responses": {
+          "description": "OK",
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/notification"
+                  }
+                },
+                "examples": {
+                  "x-examples": {
+                    "$ref": "#/components/examples/notifications"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "operationId": "getNotifications",
+        "description": "retrieve all notifications",
+        "tags": ["notifications_list"]
+      },
+      "post": {
+        "responses": {
+          "201": {
+            "description": "notification created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/notification"
+                },
+                "x-examples": {
+                  "example-1": {
+                    "id": "string",
+                    "createdAt": "string",
+                    "messagge": "string"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {}
+          }
+        },
+        "operationId": "CreateOneNotification",
+        "description": "create notification",
+        "tags": ["notifications_list", "notification_item"]
+      },
+      "parameters": []
+    },
+    "/notification/{notificationId}": {
+      "get": {
+        "summary": "",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/notification"
+                },
+                "x-examples": {
+                  "example-1": {
+                    "id": "string",
+                    "createdAt": "string",
+                    "message": "string"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "operationId": "getNotificationItem",
+        "description": "retrieve notification with the matched id",
+        "tags": ["notifications_list", "notification_item"]
+      },
+      "delete": {
+        "summary": "Delete notification",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": "Not Found"
+        },
+        "operationId": "deleteNotification",
+        "description": "Delete notification",
+        "tags": ["notification_item", "notifications_list"]
+      },
+      "parameters": []
+    },
+    "/comments": {
+      "get": {
+        "responses": {
+          "summary": "retrieve all comments",
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/comment"
+                },
+                "x-examples": {
+                  "example-1": {
+                    "$ref": "#/components/examples/comments"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "operationId": "",
+        "description": "",
+        "tags": ["comment_item", "comment_list"]
+      },
+      "post": {
+        "responses": {
+          "201": {
+            "description": "comment added successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/comment"
+                },
+                "x-examples": {
+                  "example-1": {
+                    "createdAt": "string",
+                    "from": "string",
+                    "in": "string",
+                    "comment": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Not Found"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/comment"
+              },
+              "x-examples": {
+                "example-1": {
+                  "createdAt": "string",
+                  "from": "string",
+                  "in": "string",
+                  "comment": "string"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "",
+        "description": "",
+        "tags": []
+      },
+      "parameters": []
+    },
+    "/comment/{commentId}": {
+      "get": {
+        "summary": "Get Comment",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/comment"
+                },
+                "x-examples": {
+                  "example-1": {
+                    "id": "string",
+                    "createdAt": "string",
+                    "from": "string",
+                    "in": "string",
+                    "comment": "string"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "operationId": "GetCommentItem",
+        "description": "retrieve notification by id",
+        "tags": ["comment_list", "comment_item"]
+      },
+      "put": {
+        "summary": "",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/comment"
+                },
+                "x-examples": {
+                  "example-1": {
+                    "id": "string",
+                    "createdAt": "string",
+                    "from": "string",
+                    "in": "string",
+                    "comment": "string"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/comment"
+              },
+              "x-examples": {
+                "example-1": {
+                  "id": "string",
+                  "createdAt": "string",
+                  "from": "string",
+                  "in": "string",
+                  "comment": "string"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "",
+        "description": "",
+        "tags": []
+      },
+      "delete": {
+        "summary": "Delete comment",
+        "responses": {
+          "200": { "description": "Comment Deleted Successfully" },
+          "404": { "description": "Not Found" }
+        },
+        "operationId": "DeleteComment",
+        "description": "Delete comment",
+        "tags": ["comment_item", "delete_comment"]
+      },
+      "parameters": []
+    },
+    "/teams": {
+      "get": {
+        "summary": "Get teams",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/team"
+                },
+                "x-examples": {
+                  "example-1": {
+                    "$ref": "#/components/examples/teams"
+                  }
+                }
+              }
+            }
+          },
+          "404": { "description": "Not Found" }
+        },
+        "operationId": "GetTeams",
+        "description": "retieve all comments",
+        "tags": ["comment_list", "comment_item"]
+      },
+      "post": {
+        "summary": "",
+        "responses": {
+          "201": {
+            "description": "Team created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/team"
+                },
+                "x-examples": {
+                  "example-1": {
+                    "id": "string",
+                    "name": "string",
+                    "members": [null],
+                    "assignedTasks": [null]
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "operationId": "createTeamObject",
+        "description": "",
+        "tags": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/team"
+              },
+              "x-examples": {
+                "example-1": {
+                  "id": "string",
+                  "name": "string",
+                  "members": [null],
+                  "assignedTasks": [null]
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": []
+    },
+    "/team/{teamId}": {
+      "get": {
+        "summary": "Get team",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/team"
+                },
+                "x-examples": {
+                  "example-1": {
+                    "id": "string",
+                    "name": "string",
+                    "members": [null],
+                    "assignedTasks": [null]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "operationId": "getTeamItem",
+        "description": "retrieve team by id",
+        "tags": ["team_item"]
+      },
+      "put": {
+        "summary": "Update Team",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/team"
+                },
+                "x-examples": {
+                  "example-1": {
+                    "id": "string",
+                    "name": "string",
+                    "members": [null],
+                    "assignedTasks": [null]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/team"
+              },
+              "x-examples": {
+                "example-1": {
+                  "id": "string",
+                  "name": "string",
+                  "members": [null],
+                  "assignedTasks": [null]
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "operationId": "deleteTeamItem",
+        "description": "delete team by matched id",
+        "tags": []
+      },
+      "parameters": []
+    },
+    "/files": {
+      "get": {
+        "summary": "retrieve all archives",
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/file"
+                },
+                "x-examples": {
+                  "example-1": {
+                    "$ref": "#/components/examples/files"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "getFiles",
+        "description": "retrieve all files",
+        "tags": ["files_list"]
+      },
+      "post": {
+        "summary": "create file",
+        "responses": {
+          "201": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/file"
+                },
+                "x-examples": {
+                  "example-1": {
+                    "id": "string",
+                    "createdAt": "string",
+                    "file": "string"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/file"
+              },
+              "x-examples": {
+                "example-1": {
+                  "id": "string",
+                  "createdAt": "string",
+                  "file": "string"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "",
+        "description": "",
+        "tags": []
+      },
+      "parameters": []
+    },
+    "/files/{fileId}": {
+      "get": {
+        "summary": "retrieve the files with marching id",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/file"
+                },
+                "x-examples": {
+                  "example-1": {
+                    "id": "string",
+                    "createdAt": "string",
+                    "file": "string"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "operationId": "getFile",
+        "description": "retrieve the files with matching id",
+        "tags": ["files_list", "file_item"]
+      },
+      "delete": {
+        "summary": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "operationId": "",
+        "description": "",
+        "tags": []
+      },
+      "parameters": []
+    }
   },
   "components": {
     "schemas": {
-      "tasks": {},
+      "user": {
+        "type": "object",
+        "title": "Users",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "readOnly": true
+          },
+          "full_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "notifications": {
+            "type": "array",
+            "items": {}
+          },
+          "settings": {
+            "type": "object",
+            "properties": {
+              "theme": "string"
+            }
+          },
+          "projects": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "teams": {
+                  "type": "array",
+                  "items": {}
+                }
+              }
+            }
+          },
+          "teams": {
+            "type": "array",
+            "properties": {}
+          }
+        },
+        "x-examples": {
+          "example-1": {
+            "full_name": "Pepito perez",
+            "notifications": [
+              {
+                "id": "82ab3c79-6b6f-4d52-b0e6-9a6be3b137cf",
+                "createdAt": "1751893051000",
+                "message": "project status changed to 'In Review'"
+              }
+            ],
+            "settings": {
+              "theme": "light"
+            },
+            "projects": [
+              "Taskly",
+              "Planwise",
+              "FocusNest",
+              "Mindtrail",
+              "DailyFlux",
+              "DoneHub",
+              "GoalForge"
+            ],
+            "teams": ["Marketing", "Design"]
+          }
+        },
+        "required": ["full_name", "settings", "projects", "teams"]
+      },
+      "project": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "teams": {
+            "type": "array",
+            "items": {}
+          },
+          "tasks": {
+            "type": "array",
+            "items": {}
+          },
+          "color": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "x-examples": {
+          "example-1": {
+            "id": "2e77e1bc-6196-418f-8862-bdbbb8164293",
+            "createdAt": "2025-07-08T14:00:00Z",
+            "name": "Taskly",
+            "teams": [
+              { "name": "Marketing", "members": ["Pepito perez"] },
+              { "name": "Design", "members": ["Pepito perez"] },
+              { "name": "Development", "members": ["Elena Watson"] },
+              { "name": "QA", "members": ["Elena Watson"] }
+            ],
+            "tasks": [
+              {
+                "id": "a1f8e715-7b23-47e7-94f1-11b2ef8d92b3",
+                "createdAt": "2025-07-08",
+                "state": false,
+                "title": "Design logo and branding",
+                "description": "Please coordinate with the design team before proceeding.",
+                "comments": [
+                  {
+                    "author": "System",
+                    "message": "Task created",
+                    "createdAt": "1751892824000"
+                  },
+                  {
+                    "author": "Lead Dev",
+                    "message": "Initial review passed",
+                    "createdAt": "1751893051000"
+                  }
+                ],
+                "assignedUsers": [
+                  { "full_name": "Pepito perez" },
+                  { "full_name": "Elena Watson" }
+                ],
+                "files": [
+                  {
+                    "name": "design-mockup.png",
+                    "url": "/files/design-mockup.png"
+                  }
+                ]
+              },
+              {
+                "id": "d3a911b4-2f5b-4f2b-a9d3-f331c88509a6",
+                "createdAt": "2025-07-10",
+                "state": true,
+                "title": "Deploy to staging environment",
+                "description": "Awaiting client feedback before final approval.",
+                "comments": [
+                  {
+                    "author": "QA",
+                    "message": "Found minor issues",
+                    "createdAt": "2025-07-03T09:20:00Z"
+                  }
+                ],
+                "assignedUsers": [{ "full_name": "Elena Watson" }],
+                "files": []
+              }
+            ],
+            "color": "#1890FF"
+          }
+        },
+        "required": ["id", "name", "teams", "tasks"]
+      },
       "task": {
         "type": "object",
         "properties": {
           "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "createdAt": {
             "type": "string"
           },
-          "date": {
+          "state": {
+            "type": "boolean"
+          },
+          "title": {
             "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "comments": {
+            "type": "array"
           }
-        }
+        },
+        "x-examples": {
+          "example-1": ""
+        },
+        "required": ["id", "createdAt", "state", "title", "description"]
+      },
+      "notification": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "readOnly": true
+          },
+          "createdAt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "x-examples": {
+          "example-1": {
+            "id": "82ab3c79-6b6f-4d52-b0e6-9a6be3b137cf",
+            "createdAt": "1751893051000",
+            "message": "project status changed to 'In Review'"
+          }
+        },
+        "required": ["id", "createdAt", "message"]
+      },
+      "comment": {
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string",
+            "minLength": 1,
+            "readOnly": true
+          },
+          "from": {
+            "type": "string",
+            "minLength": 1
+          },
+          "in": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "x-examples": {
+          "createdAt": "1751892824000",
+          "from": "Pepito perez",
+          "in": "Marketing",
+          "comment": "i've already done this before, please take care of that"
+        },
+        "required": ["createdAt", "from", "in", "comment"]
+      },
+      "team": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "members": {
+            "type": "array",
+            "value": {
+              "uniqueItems": true,
+              "items": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "readOnly": true
+                },
+                "full_name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "notifications": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {}
+                },
+                "settings": {
+                  "type": "object",
+                  "properties": {
+                    "theme": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "projects": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "minItems": 1,
+                  "items": {}
+                },
+                "teams": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "minItems": 1,
+                  "items": {}
+                }
+              }
+            }
+          },
+          "assignedTasks": {
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {}
+          }
+        },
+        "x-examples": {
+          "example-1": {}
+        },
+        "required": []
+      },
+      "file": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "readOnly": true
+          },
+          "createdAt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "file": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "x-examples": {},
+        "required": ["id", "createdAt", "file"]
       }
     },
-    "examples": {}
+    "examples": {
+      "users": {
+        "value": [
+          {
+            "full_name": "Pepito perez",
+            "notifications": [
+              {
+                "id": "08b4f20b-c537-4a2b-9a9a-871b5de5bc71",
+                "createdAt": "1751892824000",
+                "message": "a new comment was added in Marketing"
+              },
+              {
+                "id": "08836578-4181-4c66-8d3a-f712d65888cb",
+                "project": "1751892824000",
+                "message": "meeting in hall B at 3:15 pm"
+              }
+            ],
+            "settings": {
+              "theme": "light"
+            },
+            "projects": [
+              "Taskly",
+              "Planwise",
+              "FocusNest",
+              "Mindtrail",
+              "DailyFlux",
+              "DoneHub",
+              "GoalForge"
+            ],
+            "teams": ["Marketing", "Design"]
+          },
+          {
+            "full_name": "Elena Watson",
+            "notifications": [
+              {
+                "id": "2e77e1bc-6196-418f-8862-bdbbb8164295",
+                "createdAt": "1751892824000",
+                "message": "a new task was assigned to you"
+              },
+              {
+                "id": "81acd163-cad1-4781-8f20-ead969aa16g6",
+                "createdAt": "1751892824000",
+                "message": "project deadline updated"
+              }
+            ],
+            "settings": {
+              "theme": "dark"
+            },
+            "projects": ["Taskly", "Quantor", "Vizscope"],
+            "teams": ["Development", "QA"]
+          },
+          {
+            "full_name": "Marcus Lin",
+            "notifications": [
+              {
+                "id": "08836578-4181-4c66-8d3a-f712d65777cb",
+                "createdAt": "1751892824000",
+                "message": "new file uploaded to Design section"
+              },
+              {
+                "id": "08836578-4181-4c66-8d3a-f712d65868ce",
+                "createdAt": "1751892824000",
+                "message": "daily standup moved to 10:00 am"
+              }
+            ],
+            "settings": {
+              "theme": "light"
+            },
+            "projects": ["Planwise", "Dashbit", "Syncvault"],
+            "teams": ["Design", "Marketing"]
+          },
+          {
+            "full_name": "Sandra Novak",
+            "notifications": [
+              {
+                "id": "10ae8c9d-42ba-43ab-bb39-fe18f4d8ef8f",
+                "createdAt": "1751892824000",
+                "message": "new feedback added to Sprint 5"
+              },
+              {
+                "id": "2e77e1bc-6196-418f-8862-bdbbb8164294",
+                "createdAt": "1751892824000",
+                "message": "bug reported by QA"
+              }
+            ],
+            "settings": {
+              "theme": "dark"
+            },
+            "projects": ["FocusNest", "MetricNest", "Neurobit"],
+            "teams": ["QA", "Support"]
+          },
+          {
+            "full_name": "Jonathan Reyes",
+            "notifications": [
+              {
+                "id": "4368d2cc-7957-4663-8904-1ba345e8b4a7",
+                "createdAt": "1751892824000",
+                "message": "feature flagged for revision"
+              },
+              {
+                "id": "08836578-4181-4c66-8d3a-f712d65777ce",
+                "createdAt": "1751892824000",
+                "message": "user reported issue on mobile"
+              }
+            ],
+            "settings": {
+              "theme": "light"
+            },
+            "projects": ["Mindtrail", "Pulseframe", "Datavue"],
+            "teams": ["Product", "Customer Success"]
+          },
+          {
+            "full_name": "Chloe Kim",
+            "notifications": [
+              {
+                "id": "2378e1bc-6196-418f-8862-bdbbb8164293",
+                "createdAt": "1751892824000",
+                "message": "team planning session today at 2 PM"
+              },
+              {
+                "id": "11ae8c9d-42ba-43ab-bb39-fe18f4d8ee8f",
+                "createdAt": "1751892824000",
+                "message": "project status changed to 'In Review'"
+              }
+            ],
+            "settings": {
+              "theme": "dark"
+            },
+            "projects": ["DailyFlux", "Flowgrid", "Corely"],
+            "teams": ["Design", "UX"]
+          },
+          {
+            "full_name": "Daniel Romero",
+            "notifications": [
+              {
+                "id": "08836578-4181-4c66-8d3a-f713d65777cb",
+                "createdAt": "1751892824000",
+                "message": "QA checklist uploaded"
+              },
+              {
+                "project": "DoneHub",
+                "message": "performance metrics available"
+              }
+            ],
+            "settings": {
+              "theme": "light"
+            },
+            "projects": ["DoneHub", "Insightra", "Smartbatch"],
+            "teams": ["Engineering", "Analytics"]
+          },
+          {
+            "full_name": "Aisha Singh",
+            "notifications": [
+              {
+                "id": "08836578-4181-4c66-8d3a-f712d75779cb",
+                "createdAt": "1751892824000",
+                "message": "new OKRs added by manager"
+              },
+              {
+                "id": "10ae8c9d-42ba-43ab-bb39-fe18f4d8ze7f",
+                "createdAt": "1751892824000",
+                "message": "review session scheduled"
+              }
+            ],
+            "settings": {
+              "theme": "light"
+            },
+            "projects": ["GoalForge", "Endpointr", "Backflow"],
+            "teams": ["HR", "Operations"]
+          },
+          {
+            "full_name": "Liam Carter",
+            "notifications": [
+              {
+                "id": "08836578-4181-4c66-7d3b-f712d65777cb",
+                "createdAt": "1751892824000",
+                "message": "deployment started"
+              },
+              {
+                "id": "ab20c66a-1e8e-4c84-b5c3-9485a9ec9e4e",
+                "createdAt": "1751892824000",
+                "message": "hotfix pushed to production"
+              }
+            ],
+            "settings": {
+              "theme": "dark"
+            },
+            "projects": ["Syncvault", "Servix", "RestifyHub"],
+            "teams": ["DevOps", "Backend"]
+          },
+          {
+            "full_name": "Emily Zhao",
+            "notifications": [
+              {
+                "id": "11ae8c9d-43ba-44ab-bb39-fe18f4d8ee8f",
+                "createdAt": "1751893051000",
+                "message": "charts updated with new filters"
+              },
+              {
+                "id": "fa3e4b62-b2e5-4a8b-9401-9d32c93b3b91",
+                "createdAt": "1751892824000",
+                "message": "client shared feedback"
+              }
+            ],
+            "settings": {
+              "theme": "light"
+            },
+            "projects": ["Vizscope", "Datavue", "Dashbit"],
+            "teams": ["Analytics", "Business"]
+          },
+          {
+            "full_name": "Noah Fernández",
+            "notifications": [
+              {
+                "id": "08936578-4181-4c66-8d3a-f713d65777cb",
+                "createdAt": "1751892824000",
+                "message": "code review requested"
+              },
+              {
+                "id": "08836578-4181-4c65-8d7a-f713d65777cb",
+                "createdAt": "1751892824000",
+                "message": "branch merged to main"
+              }
+            ],
+            "settings": {
+              "theme": "dark"
+            },
+            "projects": ["Jetcore", "Nodeflux", "CogniLink"],
+            "teams": ["Engineering", "Tech Leads"]
+          }
+        ]
+      },
+      "projects": {
+        "value": [
+          {
+            "id": "2e77e1bc-6196-418f-8862-bdbbb8164293",
+            "createdAt": "1751892824000",
+            "name": "Taskly",
+            "teams": [
+              { "name": "Marketing", "members": ["Pepito perez"] },
+              { "name": "Design", "members": ["Pepito perez"] },
+              { "name": "Development", "members": ["Elena Watson"] },
+              { "name": "QA", "members": ["Elena Watson"] }
+            ],
+            "tasks": [
+              {
+                "id": "a1f8e715-7b23-47e7-94f1-11b2ef8d92b3",
+                "createdAt": "1751892824000",
+                "state": false,
+                "title": "Design logo and branding",
+                "description": "Please coordinate with the design team before proceeding.",
+                "comments": [
+                  {
+                    "author": "System",
+                    "message": "Task created",
+                    "createdAt": "1751892824000"
+                  },
+                  {
+                    "author": "Lead Dev",
+                    "message": "Initial review passed",
+                    "createdAt": "1751893051000"
+                  }
+                ],
+                "assignedUsers": [
+                  { "full_name": "Pepito perez" },
+                  { "full_name": "Elena Watson" }
+                ],
+                "files": [
+                  {
+                    "name": "design-mockup.png",
+                    "url": "/files/design-mockup.png"
+                  }
+                ]
+              },
+              {
+                "id": "d3a911b4-2f5b-4f2b-a9d3-f331c88509a6",
+                "createdAt": "1751892824000",
+                "state": true,
+                "title": "Deploy to staging environment",
+                "description": "Awaiting client feedback before final approval.",
+                "comments": [
+                  {
+                    "author": "QA",
+                    "message": "Found minor issues",
+                    "createdAt": "1751892824000"
+                  }
+                ],
+                "assignedUsers": [{ "full_name": "Elena Watson" }],
+                "files": []
+              }
+            ],
+            "color": "#1890FF"
+          }
+        ]
+      },
+      "tasks": {
+        "value": [
+          {
+            "id": "ccc302bc-57bc-45f1-877b-0d418c4a77f8",
+            "createdAt": "1751892824000",
+            "state": "Doing",
+            "title": "Refactor dashboard component",
+            "description": "Coordinate with the QA team for testing.",
+            "comments": [
+              {
+                "author": "System",
+                "message": "Task created",
+                "createdAt": "1751892824000"
+              }
+            ],
+            "assignedUsers": ["Chloe Kim", "Marcus Lin"],
+            "files": [
+              {
+                "name": "specs.pdf",
+                "url": "/files/specs.pdf"
+              }
+            ]
+          },
+          {
+            "id": "4b5d2579-f5a3-4831-929a-b86ca3f3a079",
+            "createdAt": "1751892824000",
+            "state": "Completed",
+            "title": "Track user events",
+            "description": "This task is important for the upcoming milestone.",
+            "comments": [
+              {
+                "author": "System",
+                "message": "Task created",
+                "createdAt": "1751892824000"
+              }
+            ],
+            "assignedUsers": ["Sandra Novak", "Jonathan Reyes"],
+            "files": [
+              {
+                "name": "README.md",
+                "url": "/files/README.md"
+              },
+              {
+                "name": "ui-preview.png",
+                "url": "/files/ui-preview.png"
+              }
+            ]
+          },
+          {
+            "id": "4368d2cc-7957-4663-8904-1ba345e8b4a6",
+            "createdAt": "1751892824000",
+            "state": "Doing",
+            "title": "Add dark mode toggle",
+            "description": "Ensure all edge cases are handled properly.",
+            "comments": [
+              {
+                "author": "System",
+                "message": "Task created",
+                "createdAt": "1751892824000"
+              },
+              {
+                "author": "QA",
+                "message": "Found a bug during testing",
+                "createdAt": "1751892824000"
+              }
+            ],
+            "assignedUsers": ["Aisha Singh", "Daniel Romero"],
+            "files": [
+              {
+                "name": "ui-preview.png",
+                "url": "/files/ui-preview.png"
+              },
+              {
+                "name": "README.md",
+                "url": "/files/README.md"
+              }
+            ]
+          },
+          {
+            "id": "956586d9-08dd-44b3-98c8-c3115df1656b",
+            "createdAt": "1751892824000",
+            "state": "Completed",
+            "title": "Translate app to Spanish",
+            "description": "This task is important for the upcoming milestone.",
+            "comments": [
+              {
+                "author": "System",
+                "message": "Task created",
+                "createdAt": "1751892824000"
+              },
+              {
+                "author": "Manager",
+                "message": "Please prioritize this task",
+                "createdAt": "1751893051000"
+              }
+            ],
+            "assignedUsers": ["Liam Carter"],
+            "files": [
+              {
+                "name": "specs.pdf",
+                "url": "/files/specs.pdf"
+              },
+              {
+                "name": "ui-preview.png",
+                "url": "/files/ui-preview.png"
+              }
+            ]
+          },
+          {
+            "id": "29565a6b-f342-4936-ae18-fd9acbea0ceb",
+            "createdAt": "1751892824000",
+            "state": "In Review",
+            "title": "Migrate database to PostgreSQL",
+            "description": "Check cross-browser compatibility before closing.",
+            "comments": [
+              {
+                "author": "Manager",
+                "message": "Please prioritize this task",
+                "createdAt": "1751892824000"
+              },
+              {
+                "author": "System",
+                "message": "Task created",
+                "createdAt": "1751892824000"
+              }
+            ],
+            "assignedUsers": ["Noah Fernandez", "Marcus Lin"],
+            "files": []
+          },
+          {
+            "id": "7da7f457-89c2-4e63-8bd2-5a6cc0e7dfc0",
+            "createdAt": "1751892824000",
+            "state": "Completed",
+            "title": "Translate app to Spanish",
+            "description": "This task is important for the upcoming milestone.",
+            "comments": [
+              {
+                "author": "Manager",
+                "message": "Please prioritize this task",
+                "createdAt": "1751892824000"
+              }
+            ],
+            "assignedUsers": ["Pepito Perez"],
+            "files": [
+              {
+                "name": "ui-preview.png",
+                "url": "/files/ui-preview.png"
+              },
+              {
+                "name": "README.md",
+                "url": "/files/README.md"
+              }
+            ]
+          },
+          {
+            "id": "10ae8c9d-42ba-43ab-bb39-fe18f4d8ee8f",
+            "createdAt": "1751892824000",
+            "state": "Doing",
+            "title": "Migrate database to PostgreSQL",
+            "description": "This task is important for the upcoming milestone.",
+            "comments": [
+              {
+                "author": "System",
+                "message": "Task created",
+                "createdAt": "1751892824000"
+              }
+            ],
+            "assignedUsers": ["Sandra Novak"],
+            "files": [
+              {
+                "name": "ui-preview.png",
+                "url": "/files/ui-preview.png"
+              },
+              {
+                "name": "README.md",
+                "url": "/files/README.md"
+              }
+            ]
+          },
+          {
+            "id": "08836578-4181-4c66-8d3a-f712d65888cd",
+            "createdAt": "1751892824000",
+            "state": "Doing",
+            "title": "Add unit tests to user service",
+            "description": "Check cross-browser compatibility before closing.",
+            "comments": [
+              {
+                "author": "QA",
+                "message": "Found a bug during testing",
+                "createdAt": "1751892824000"
+              },
+              {
+                "author": "Manager",
+                "message": "Please prioritize this task",
+                "createdAt": "1751892824000"
+              }
+            ],
+            "assignedUsers": ["Sandra Novak", "Elena Watson"],
+            "files": []
+          },
+          {
+            "id": "6d1df2a5-62c4-4025-bcc8-7790e544cf79",
+            "createdAt": "1751892824000",
+            "state": "To Do",
+            "title": "Translate app to Spanish",
+            "description": "This task is important for the upcoming milestone.",
+            "comments": [
+              {
+                "author": "System",
+                "message": "Task created",
+                "createdAt": "1751892824000"
+              }
+            ],
+            "assignedUsers": ["Jonathan Reyes"],
+            "files": [
+              {
+                "name": "README.md",
+                "url": "/files/README.md"
+              },
+              {
+                "name": "specs.pdf",
+                "url": "/files/specs.pdf"
+              }
+            ]
+          },
+          {
+            "id": "089dfcf2-0dba-47ec-b2fb-b32f019ad53b",
+            "createdAt": "1751892824000",
+            "state": "Blocked",
+            "title": "Update dependencies",
+            "description": "Ensure all edge cases are handled properly.",
+            "comments": [
+              {
+                "author": "Manager",
+                "message": "Please prioritize this task",
+                "createdAt": "1751892824000"
+              },
+              {
+                "author": "System",
+                "message": "Task created",
+                "createdAt": "1751892824000"
+              }
+            ],
+            "assignedUsers": ["Emily Zhao"],
+            "files": [
+              {
+                "name": "ui-preview.png",
+                "url": "/files/ui-preview.png"
+              },
+              {
+                "name": "README.md",
+                "url": "/files/README.md"
+              }
+            ]
+          },
+          {
+            "id": "4ae10577-70bf-4875-ab49-8d703318cc8c",
+            "createdAt": "1751892824000",
+            "state": "Doing",
+            "title": "Write documentation",
+            "description": "Coordinate with the QA team for testing.",
+            "comments": [
+              {
+                "author": "Manager",
+                "message": "Please prioritize this task",
+                "createdAt": "1751892824000"
+              }
+            ],
+            "assignedUsers": ["Emily Zhao", "Chloe Kim"],
+            "files": []
+          },
+          {
+            "id": "08b4f20b-c537-4a2b-9a9a-871b5de5bc77",
+            "createdAt": "1751892824000",
+            "state": "Doing",
+            "title": "Clean up unused code",
+            "description": "Coordinate with the QA team for testing.",
+            "comments": [
+              {
+                "author": "System",
+                "message": "Task created",
+                "createdAt": "1751892824000"
+              }
+            ],
+            "assignedUsers": ["Emily Zhao"],
+            "files": []
+          },
+          {
+            "id": "8ea14728-46bb-4c88-b58a-f3f2aaf9bbb7",
+            "createdAt": "1751892824000",
+            "state": "To Do",
+            "title": "Create onboarding flow",
+            "description": "Check cross-browser compatibility before closing.",
+            "comments": [
+              {
+                "author": "Manager",
+                "message": "Please prioritize this task",
+                "createdAt": "1751892824000"
+              },
+              {
+                "author": "System",
+                "message": "Task created",
+                "createdAt": "1751892824000"
+              }
+            ],
+            "assignedUsers": ["Sandra Novak", "Chloe Kim"],
+            "files": [
+              {
+                "name": "specs.pdf",
+                "url": "/files/specs.pdf"
+              },
+              {
+                "name": "ui-preview.png",
+                "url": "/files/ui-preview.png"
+              }
+            ]
+          },
+          {
+            "id": "6ef76647-dd2b-4d4a-bc55-373dfb4c091a",
+            "createdAt": "1751892824000",
+            "state": "Doing",
+            "title": "Write documentation",
+            "description": "Check cross-browser compatibility before closing.",
+            "comments": [
+              {
+                "author": "QA",
+                "message": "Found a bug during testing",
+                "createdAt": "1751892824000"
+              }
+            ],
+            "assignedUsers": ["Jonathan Reyes"],
+            "files": []
+          },
+          {
+            "id": "81acd163-cad1-4781-8f20-ead969aa16e7",
+            "createdAt": "1751892824000",
+            "state": "Completed",
+            "title": "Validate email input",
+            "description": "Include proper accessibility attributes.",
+            "comments": [
+              {
+                "author": "Manager",
+                "message": "Please prioritize this task",
+                "createdAt": "1751893051000"
+              },
+              {
+                "author": "System",
+                "message": "Task created",
+                "createdAt": "1751892824000"
+              }
+            ],
+            "assignedUsers": ["Noah Fernandez", "Chloe Kim"],
+            "files": [
+              {
+                "name": "ui-preview.png",
+                "url": "/files/ui-preview.png"
+              },
+              {
+                "name": "README.md",
+                "url": "/files/README.md"
+              }
+            ]
+          }
+        ]
+      },
+      "notifications": {
+        "value": [
+          {
+            "id": "08b4f20b-c537-4a2b-9a9a-871b5de5bc71",
+            "createdAt": "1751892824000",
+            "message": "a new comment was added in Marketing"
+          },
+          {
+            "id": "08836578-4181-4c66-8d3a-f712d65888cb",
+            "project": "1751892824000",
+            "message": "meeting in hall B at 3:15 pm"
+          },
+          {
+            "id": "2e77e1bc-6196-418f-8862-bdbbb8164295",
+            "createdAt": "1751892824000",
+            "message": "a new task was assigned to you"
+          },
+          {
+            "id": "81acd163-cad1-4781-8f20-ead969aa16g6",
+            "createdAt": "1751892824000",
+            "message": "project deadline updated"
+          },
+          {
+            "id": "08836578-4181-4c66-8d3a-f712d65777cb",
+            "createdAt": "1751892824000",
+            "message": "new file uploaded to Design section"
+          },
+          {
+            "id": "08836578-4181-4c66-8d3a-f712d65868ce",
+            "createdAt": "1751892824000",
+            "message": "daily standup moved to 10:00 am"
+          },
+          {
+            "id": "10ae8c9d-42ba-43ab-bb39-fe18f4d8ef8f",
+            "createdAt": "1751892824000",
+            "message": "new feedback added to Sprint 5"
+          },
+          {
+            "id": "2e77e1bc-6196-418f-8862-bdbbb8164294",
+            "createdAt": "1751892824000",
+            "message": "bug reported by QA"
+          },
+          {
+            "id": "4368d2cc-7957-4663-8904-1ba345e8b4a7",
+            "createdAt": "1751892824000",
+            "message": "feature flagged for revision"
+          },
+          {
+            "id": "08836578-4181-4c66-8d3a-f712d65777ce",
+            "createdAt": "1751892824000",
+            "message": "user reported issue on mobile"
+          },
+          {
+            "id": "2378e1bc-6196-418f-8862-bdbbb8164293",
+            "createdAt": "1751892824000",
+            "message": "team planning session today at 2 PM"
+          },
+          {
+            "id": "11ae8c9d-42ba-43ab-bb39-fe18f4d8ee8f",
+            "createdAt": "1751892824000",
+            "message": "project status changed to 'In Review'"
+          },
+          {
+            "id": "08836578-4181-4c66-8d3a-f713d65777cb",
+            "createdAt": "1751892824000",
+            "message": "QA checklist uploaded"
+          },
+          {
+            "id": "08836578-4181-4c65-8z7a-f712d65797cb",
+            "createdAt": "1751892824000",
+            "message": "performance metrics available"
+          },
+          {
+            "id": "08836578-4181-4c66-8d3a-f712d75779cb",
+            "createdAt": "1751892824000",
+            "message": "new OKRs added by manager"
+          },
+          {
+            "id": "10ae8c9d-42ba-43ab-bb39-fe18f4d8ze7f",
+            "createdAt": "1751892824000",
+            "message": "review session scheduled"
+          },
+          {
+            "id": "08836578-4181-4c66-7d3b-f712d65777cb",
+            "createdAt": "1751892824000",
+            "message": "deployment started"
+          },
+          {
+            "id": "ab20c66a-1e8e-4c84-b5c3-9485a9ec9e4e",
+            "createdAt": "1751892824000",
+            "message": "hotfix pushed to production"
+          },
+          {
+            "id": "11ae8c9d-43ba-44ab-bb39-fe18f4d8ee8f",
+            "createdAt": "1751893051000",
+            "message": "charts updated with new filters"
+          },
+          {
+            "id": "fa3e4b62-b2e5-4a8b-9401-9d32c93b3b91",
+            "createdAt": "1751892824000",
+            "message": "client shared feedback"
+          },
+          {
+            "id": "08936578-4181-4c66-8d3a-f713d65777cb",
+            "createdAt": "1751892824000",
+            "message": "code review requested"
+          },
+          {
+            "id": "08836578-4181-4c65-8d7a-f713d65777cb",
+            "createdAt": "1751892824000",
+            "message": "branch merged to main"
+          }
+        ]
+      },
+      "comments": {
+        "value": [
+          {
+            "createdAt": "1751892824000",
+            "from": "Pepito Pérez",
+            "in": "Marketing",
+            "comment": "I've already done that before, please take care of that"
+          },
+          {
+            "createdAt": "1751892824000",
+            "from": "Ana Gómez",
+            "in": "Sales",
+            "comment": "Can you double-check the report?"
+          },
+          {
+            "createdAt": "1751892824000",
+            "from": "Luis Martínez",
+            "in": "Development",
+            "comment": "This issue has been resolved in the latest commit"
+          },
+          {
+            "createdAt": "1751892824000",
+            "from": "Carlos Ruiz",
+            "in": "Design",
+            "comment": "I've updated the mockups, please review"
+          },
+          {
+            "createdAt": "1751892824000",
+            "from": "María Fernández",
+            "in": "Marketing",
+            "comment": "Great idea, let's implement it next sprint"
+          },
+          {
+            "createdAt": "1751892824000",
+            "from": "Pedro Sánchez",
+            "in": "QA",
+            "comment": "Some test cases are still failing"
+          },
+          {
+            "createdAt": "1751892824000",
+            "from": "Camila Torres",
+            "in": "Sales",
+            "comment": "We just closed the deal with the client!"
+          },
+          {
+            "createdAt": "1751892824000",
+            "from": "Jorge Ramírez",
+            "in": "Support",
+            "comment": "Client is still waiting for an update"
+          },
+          {
+            "createdAt": "1751892824000",
+            "from": "Lucía Mendoza",
+            "in": "Development",
+            "comment": "I'll start working on the new feature tomorrow"
+          },
+          {
+            "createdAt": "1751892824000",
+            "from": "Mateo Rojas",
+            "in": "Design",
+            "comment": "Final version of the logo is now uploaded"
+          }
+        ]
+      },
+      "teams": {
+        "value": []
+      },
+      "files": {
+        "value": []
+      }
+    }
   }
 }

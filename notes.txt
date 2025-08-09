@@ -1,37 +1,65 @@
-User: {
- notifications: Number,
- settings: Settings,
- inbox: Inbox[], !PENDING
- projects: Project[],
- teams: Team[]
-}
+-1 TASKS
+ -1.1 las tasks solo se pueden modificar si estan activas
+ -1.2 xxxxxxxxx
 
-Project: {
- Teams: Team[],
- tasks: Task[],
+///PARAMETERS///
  
-}
-Date {
-  timestamp: dd/mm/aa;
-  update: dd/mm/aa;
-}
-
-//si la task no esta activa entonces no se puede actualizar
 
 
-Task: {
- id: crypto,
- date: Date, 
- state: boolean,
- title: string,
- description: string,
- comments: Comments[],
- assignedUsers: User[],
- archives: Archive[],
-}
+👥///Teams///
+    Development
+    QA
+    Design
+    Marketing
+    Support
+    Product
+    Customer Success
+    UX
+    Engineering
+    Analytics
+    HR
+    Operations
+    DevOps
+    Backend
+    Business
+    Tech Leads
 
+📁///PROJECTS///
+    Taskly
+    Quantor
+    Vizscope
+    Planwise
+    Dashbit
+    Syncvault
+    FocusNest
+    MetricNest
+    Neurobit
+    Mindtrail
+    Pulseframe
+    Datavue
+    DailyFlux
+    Flowgrid
+    Corely
+    DoneHub
+    Insightra
+    Smartbatch
+    GoalForge
+    Endpointr
+    Backflow
+    Servix
+    RestifyHub
+    Jetcore
+    Nodeflux
+    CogniLink
 
-
-crypto `${string}-${string}-${string}-${string}-${string}`
-
-estado inicial []
+👤///USERS///
+    Elena Watson
+    Marcus Lin
+    Sandra Novak
+    Jonathan Reyes
+    Chloe Kim
+    Daniel Romero
+    Aisha Singh
+    Liam Carter
+    Emily Zhao
+    Noah Fernández

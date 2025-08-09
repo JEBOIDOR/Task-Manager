@@ -7,5 +7,5 @@ export const Wrapper = ({
   className: string;
   children: React.ReactNode;
 }) => {
-  return <section className={className}>{children}</section>;
+  return <section className={className || ""}>{children}</section>;
 };

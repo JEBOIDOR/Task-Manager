@@ -1,14 +1,10 @@
-import { Typography } from "../ui/Typography";
-import { Wrapper } from "../ui/Wrapper";
-import { Image } from "../ui/Image";
+import { Typography, Wrapper, Image, Indicator, Figure } from "../ui/index";
 import { Icon } from "@iconify-icon/react";
-import { Indicator } from "../ui/Indicator";
-import { userProfileActions } from "../constants/constants";
+import { userProfileActions } from "../constants/styles";
 import { Progressbar } from "./Progressbar";
 import { useState } from "react";
-import { Figure } from "../ui/Figure";
 
-export const Sidebar = ({ className }: { className?: string }) => {
+export const Sidebar = () => {
   const [tasks, setTasks] = useState([
     { completed: false },
     { completed: false },
@@ -34,8 +30,11 @@ export const Sidebar = ({ className }: { className?: string }) => {
   ]);
 
   return (
-    <aside className={`border-gray quarter-screen scroll ${className || ""}`}>
-      <div className="p-3 b-bottom sticky">
+    <aside
+      className="border-gray quarter-screen scroll"
+      style={{ minWidth: "270px" }}
+    >
+      <div className="b-bottom" style={{ minHeight: "80px" }}>
         <Typography tag="h3" variant="gray" weight="bd" align="center">
           TASK MANAGER
         </Typography>
@@ -49,8 +48,8 @@ export const Sidebar = ({ className }: { className?: string }) => {
           natalieSmith@gmail.com
         </Typography>
         <div className="flex full-w justify-center gap-3 pt-2">
-          {userProfileActions.map((action) => (
-            <button className={action.styles}>
+          {userProfileActions.map((action, idx) => (
+            <button className={action.styles} key={idx}>
               <Icon
                 icon={action.icon}
                 width="24"
@@ -100,14 +99,15 @@ export const Sidebar = ({ className }: { className?: string }) => {
             </Typography>
           </div>
         </Wrapper>
-        <Wrapper className="full-w mb-2 mt-2 flex column gap-1">
+        <Wrapper className="full-w mb-2 mt-2 flex column gap-1 ">
           <Typography tag="span" variant="black" align="left" weight="nm">
             PROJECTS
           </Typography>
 
           {[["Marketing"], ["Design"], ["Development"], ["Managment"]].map(
-            (e) => (
-              <div className="flex align-center gap-2">
+            //FIX//
+            (e, idx) => (
+              <div className="flex align-center gap-2" key={idx}>
                 <Figure className="r-full sizing-1 bw-2" /*FIX*/ />
                 <Typography
                   variant="grey"
@@ -125,7 +125,7 @@ export const Sidebar = ({ className }: { className?: string }) => {
           <Typography tag="h2" variant="black" align="left">
             TEAM
           </Typography>
-          <div className="flex wrap gap-2 mt-1">
+          <div className="flex wrap justify-center gap-2 mt-1">
             <Image
               src="/antonia.avif"
               className="r-full"

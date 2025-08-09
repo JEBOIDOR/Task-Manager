@@ -1,5 +1,5 @@
 import type { JSX } from "react";
-import { variants } from "../constants/constants";
+import { variants } from "../constants/styles";
 
 const { color, size, weight, align } = variants;
 

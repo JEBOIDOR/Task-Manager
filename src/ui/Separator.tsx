@@ -1,3 +1,3 @@
 export const Separator = () => {
-  return <div>Separator</div>;
+  return <hr className="b-top full-w" />;
 };

@@ -1174,7 +1174,7 @@
               {
                 "id": "a1f8e715-7b23-47e7-94f1-11b2ef8d92b3",
                 "createdAt": "2025-07-08",
-                "state": false,
+                "state": "Completed",
                 "title": "Design logo and branding",
                 "description": "Please coordinate with the design team before proceeding.",
                 "comments": [
@@ -1395,6 +1395,7 @@
         "value": [
           {
             "full_name": "Pepito perez",
+            "avatar": "/pepito_perez.avif",
             "notifications": [
               {
                 "id": "08b4f20b-c537-4a2b-9a9a-871b5de5bc71",
@@ -1412,17 +1413,17 @@
             },
             "projects": [
               "Taskly",
+              "Dashbit",
               "Planwise",
               "FocusNest",
               "Mindtrail",
-              "DailyFlux",
-              "DoneHub",
-              "GoalForge"
+              "Neurobit"
             ],
             "teams": ["Marketing", "Design"]
           },
           {
             "full_name": "Elena Watson",
+            "avatar": "/elena_watson.avif",
             "notifications": [
               {
                 "id": "2e77e1bc-6196-418f-8862-bdbbb8164295",
@@ -1443,6 +1444,7 @@
           },
           {
             "full_name": "Marcus Lin",
+            "avatar": "/marcus_lin.avif",
             "notifications": [
               {
                 "id": "08836578-4181-4c66-8d3a-f712d65777cb",
@@ -1463,6 +1465,7 @@
           },
           {
             "full_name": "Sandra Novak",
+            "avatar": "/sandra_novak.webp",
             "notifications": [
               {
                 "id": "10ae8c9d-42ba-43ab-bb39-fe18f4d8ef8f",
@@ -1483,6 +1486,7 @@
           },
           {
             "full_name": "Jonathan Reyes",
+            "avatar": "/jonathan_reyes.jpg",
             "notifications": [
               {
                 "id": "4368d2cc-7957-4663-8904-1ba345e8b4a7",
@@ -1499,10 +1503,11 @@
               "theme": "light"
             },
             "projects": ["Mindtrail", "Pulseframe", "Datavue"],
-            "teams": ["Product", "Customer Success"]
+            "teams": ["Customer Success", "UX"]
           },
           {
             "full_name": "Chloe Kim",
+            "avatar": "/chloe_kim.avif",
             "notifications": [
               {
                 "id": "2378e1bc-6196-418f-8862-bdbbb8164293",
@@ -1522,103 +1527,20 @@
             "teams": ["Design", "UX"]
           },
           {
-            "full_name": "Daniel Romero",
+            "full_name": "marcela",
+            "avatar": "/marcela.avif",
             "notifications": [
               {
                 "id": "08836578-4181-4c66-8d3a-f713d65777cb",
                 "createdAt": "1751892824000",
                 "message": "QA checklist uploaded"
-              },
-              {
-                "project": "DoneHub",
-                "message": "performance metrics available"
               }
             ],
             "settings": {
               "theme": "light"
             },
             "projects": ["DoneHub", "Insightra", "Smartbatch"],
-            "teams": ["Engineering", "Analytics"]
-          },
-          {
-            "full_name": "Aisha Singh",
-            "notifications": [
-              {
-                "id": "08836578-4181-4c66-8d3a-f712d75779cb",
-                "createdAt": "1751892824000",
-                "message": "new OKRs added by manager"
-              },
-              {
-                "id": "10ae8c9d-42ba-43ab-bb39-fe18f4d8ze7f",
-                "createdAt": "1751892824000",
-                "message": "review session scheduled"
-              }
-            ],
-            "settings": {
-              "theme": "light"
-            },
-            "projects": ["GoalForge", "Endpointr", "Backflow"],
-            "teams": ["HR", "Operations"]
-          },
-          {
-            "full_name": "Liam Carter",
-            "notifications": [
-              {
-                "id": "08836578-4181-4c66-7d3b-f712d65777cb",
-                "createdAt": "1751892824000",
-                "message": "deployment started"
-              },
-              {
-                "id": "ab20c66a-1e8e-4c84-b5c3-9485a9ec9e4e",
-                "createdAt": "1751892824000",
-                "message": "hotfix pushed to production"
-              }
-            ],
-            "settings": {
-              "theme": "dark"
-            },
-            "projects": ["Syncvault", "Servix", "RestifyHub"],
-            "teams": ["DevOps", "Backend"]
-          },
-          {
-            "full_name": "Emily Zhao",
-            "notifications": [
-              {
-                "id": "11ae8c9d-43ba-44ab-bb39-fe18f4d8ee8f",
-                "createdAt": "1751893051000",
-                "message": "charts updated with new filters"
-              },
-              {
-                "id": "fa3e4b62-b2e5-4a8b-9401-9d32c93b3b91",
-                "createdAt": "1751892824000",
-                "message": "client shared feedback"
-              }
-            ],
-            "settings": {
-              "theme": "light"
-            },
-            "projects": ["Vizscope", "Datavue", "Dashbit"],
-            "teams": ["Analytics", "Business"]
-          },
-          {
-            "full_name": "Noah Fernández",
-            "notifications": [
-              {
-                "id": "08936578-4181-4c66-8d3a-f713d65777cb",
-                "createdAt": "1751892824000",
-                "message": "code review requested"
-              },
-              {
-                "id": "08836578-4181-4c65-8d7a-f713d65777cb",
-                "createdAt": "1751892824000",
-                "message": "branch merged to main"
-              }
-            ],
-            "settings": {
-              "theme": "dark"
-            },
-            "projects": ["Jetcore", "Nodeflux", "CogniLink"],
-            "teams": ["Engineering", "Tech Leads"]
+            "teams": ["Engineering"]
           }
         ]
       },
@@ -1629,10 +1551,16 @@
             "createdAt": "1751892824000",
             "name": "Taskly",
             "teams": [
-              { "name": "Marketing", "members": ["Pepito perez"] },
-              { "name": "Design", "members": ["Pepito perez"] },
+              {
+                "name": "Marketing",
+                "members": ["Pepito perez", "Marcus Lin"]
+              },
+              {
+                "name": "Design",
+                "members": ["Pepito perez", "Marcus Lin", "Chloe Kim"]
+              },
               { "name": "Development", "members": ["Elena Watson"] },
-              { "name": "QA", "members": ["Elena Watson"] }
+              { "name": "QA", "members": ["Elena Watson", "Sandra Novak"] }
             ],
             "tasks": [
               {
@@ -1640,7 +1568,7 @@
                 "createdAt": "1751892824000",
                 "state": false,
                 "title": "Design logo and branding",
-                "description": "Please coordinate with the design team before proceeding.",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
                 "comments": [
                   {
                     "author": "System",
@@ -1669,7 +1597,7 @@
                 "createdAt": "1751892824000",
                 "state": true,
                 "title": "Deploy to staging environment",
-                "description": "Awaiting client feedback before final approval.",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
                 "comments": [
                   {
                     "author": "QA",
@@ -1682,6 +1610,315 @@
               }
             ],
             "color": "#1890FF"
+          },
+          {
+            "id": "8c859bc0-d876-4d30-bd29-482ab71d7bfe",
+            "createdAt": "1751892824000",
+            "name": "Dashbit",
+            "teams": [
+              { "name": "Marketing", "members": ["Pepito perez"] },
+              { "name": "Design", "members": ["Pepito perez"] },
+              { "name": "Development", "members": ["Elena Watson"] },
+              { "name": "QA", "members": ["Elena Watson"] }
+            ],
+            "tasks": [
+              {
+                "id": "ccc302bc-57bc-45f1-877b-0d418c4a77f8",
+                "createdAt": "1751892824000",
+                "state": "Doing",
+                "title": "Refactor dashboard component",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
+                "comments": [
+                  {
+                    "author": "System",
+                    "message": "Task created",
+                    "createdAt": "1751892824000"
+                  }
+                ],
+                "assignedUsers": ["Chloe Kim", "Marcus Lin"],
+                "files": [
+                  {
+                    "name": "specs.pdf",
+                    "url": "/files/specs.pdf"
+                  }
+                ]
+              },
+              {
+                "id": "4b5d2579-f5a3-4831-929a-b86ca3f3a079",
+                "createdAt": "1751892824000",
+                "state": "Completed",
+                "title": "Track user events",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
+                "comments": [
+                  {
+                    "author": "System",
+                    "message": "Task created",
+                    "createdAt": "1751892824000"
+                  }
+                ],
+                "assignedUsers": ["Sandra Novak", "Jonathan Reyes"],
+                "files": [
+                  {
+                    "name": "README.md",
+                    "url": "/files/README.md"
+                  },
+                  {
+                    "name": "ui-preview.png",
+                    "url": "/files/ui-preview.png"
+                  }
+                ]
+              }
+            ],
+            "color": "#625be8"
+          },
+          {
+            "id": "b586621a-40b2-4844-8f7b-c146b8de1e92",
+            "createdAt": "1751892824000",
+            "name": "Planwise",
+            "teams": [
+              { "name": "Marketing", "members": ["Pepito perez"] },
+              { "name": "Design", "members": ["Pepito perez"] },
+              { "name": "Development", "members": ["Elena Watson"] },
+              { "name": "QA", "members": ["Elena Watson"] }
+            ],
+            "tasks": [
+              {
+                "id": "4368d2cc-7957-4663-8904-1ba345e8b4a6",
+                "createdAt": "1751892824000",
+                "state": "Doing",
+                "title": "Add dark mode toggle",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
+                "comments": [
+                  {
+                    "author": "System",
+                    "message": "Task created",
+                    "createdAt": "1751892824000"
+                  },
+                  {
+                    "author": "QA",
+                    "message": "Found a bug during testing",
+                    "createdAt": "1751892824000"
+                  }
+                ],
+                "assignedUsers": ["Aisha Singh", "marcela"],
+                "files": [
+                  {
+                    "name": "ui-preview.png",
+                    "url": "/files/ui-preview.png"
+                  },
+                  {
+                    "name": "README.md",
+                    "url": "/files/README.md"
+                  }
+                ]
+              },
+              {
+                "id": "956586d9-08dd-44b3-98c8-c3115df1656b",
+                "createdAt": "1751892824000",
+                "state": "Completed",
+                "title": "Translate app to Spanish",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
+                "comments": [
+                  {
+                    "author": "System",
+                    "message": "Task created",
+                    "createdAt": "1751892824000"
+                  },
+                  {
+                    "author": "Manager",
+                    "message": "Please prioritize this task",
+                    "createdAt": "1751893051000"
+                  }
+                ],
+                "assignedUsers": ["Liam Carter"],
+                "files": [
+                  {
+                    "name": "specs.pdf",
+                    "url": "/files/specs.pdf"
+                  },
+                  {
+                    "name": "ui-preview.png",
+                    "url": "/files/ui-preview.png"
+                  }
+                ]
+              }
+            ],
+            "color": "#fec267"
+          },
+          {
+            "id": "426182f4-c0c7-488d-b3a7-74772afb0ab0",
+            "createdAt": "1751892824000",
+            "name": "FocusNest",
+            "teams": [
+              { "name": "Marketing", "members": ["Pepito perez"] },
+              { "name": "Design", "members": ["Pepito perez"] },
+              { "name": "Development", "members": ["Elena Watson"] },
+              { "name": "QA", "members": ["Elena Watson"] }
+            ],
+            "tasks": [
+              {
+                "id": "29565a6b-f342-4936-ae18-fd9acbea0ceb",
+                "createdAt": "1751892824000",
+                "state": "In Review",
+                "title": "Migrate database to PostgreSQL",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
+                "comments": [
+                  {
+                    "author": "Manager",
+                    "message": "Please prioritize this task",
+                    "createdAt": "1751892824000"
+                  },
+                  {
+                    "author": "System",
+                    "message": "Task created",
+                    "createdAt": "1751892824000"
+                  }
+                ],
+                "assignedUsers": ["Noah Fernandez", "Marcus Lin"],
+                "files": []
+              },
+              {
+                "id": "7da7f457-89c2-4e63-8bd2-5a6cc0e7dfc0",
+                "createdAt": "1751892824000",
+                "state": "Completed",
+                "title": "Translate app to Spanish",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
+                "comments": [
+                  {
+                    "author": "Manager",
+                    "message": "Please prioritize this task",
+                    "createdAt": "1751892824000"
+                  }
+                ],
+                "assignedUsers": ["Pepito Perez"],
+                "files": [
+                  {
+                    "name": "ui-preview.png",
+                    "url": "/files/ui-preview.png"
+                  },
+                  {
+                    "name": "README.md",
+                    "url": "/files/README.md"
+                  }
+                ]
+              }
+            ],
+            "color": "#fc6679"
+          },
+          {
+            "id": "afc34754-2199-4398-9b8b-7280dd55fbe7",
+            "createdAt": "1751892824000",
+            "name": "Mindtrail",
+            "teams": [
+              { "name": "Marketing", "members": ["Pepito perez"] },
+              { "name": "Design", "members": ["Pepito perez"] },
+              { "name": "Development", "members": ["Elena Watson"] },
+              { "name": "QA", "members": ["Elena Watson"] }
+            ],
+            "tasks": [
+              {
+                "id": "10ae8c9d-42ba-43ab-bb39-fe18f4d8ee8f",
+                "createdAt": "1751892824000",
+                "state": "Doing",
+                "title": "Migrate database to PostgreSQL",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
+                "comments": [
+                  {
+                    "author": "System",
+                    "message": "Task created",
+                    "createdAt": "1751892824000"
+                  }
+                ],
+                "assignedUsers": ["Sandra Novak"],
+                "files": [
+                  {
+                    "name": "ui-preview.png",
+                    "url": "/files/ui-preview.png"
+                  },
+                  {
+                    "name": "README.md",
+                    "url": "/files/README.md"
+                  }
+                ]
+              },
+              {
+                "id": "08836578-4181-4c66-8d3a-f712d65888cd",
+                "createdAt": "1751892824000",
+                "state": "Doing",
+                "title": "Add unit tests to user service",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
+                "comments": [
+                  {
+                    "author": "QA",
+                    "message": "Found a bug during testing",
+                    "createdAt": "1751892824000"
+                  },
+                  {
+                    "author": "Manager",
+                    "message": "Please prioritize this task",
+                    "createdAt": "1751892824000"
+                  }
+                ],
+                "assignedUsers": ["Sandra Novak", "Elena Watson"],
+                "files": []
+              }
+            ],
+            "color": "#f14ebc"
+          },
+          {
+            "id": "77237be0-a69c-4419-9466-cfbcb8d14203",
+            "createdAt": "1751892824000",
+            "name": "Neurobit",
+            "teams": [
+              { "name": "Marketing", "members": ["Pepito perez"] },
+              { "name": "Design", "members": ["Pepito perez"] },
+              { "name": "Development", "members": ["Elena Watson"] },
+              { "name": "QA", "members": ["Elena Watson"] }
+            ],
+            "tasks": [
+              {
+                "id": "6d1df2a5-62c4-4025-bcc8-7790e544cf79",
+                "createdAt": "1751892824000",
+                "state": "To Do",
+                "title": "Translate app to Spanish",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
+                "comments": [
+                  {
+                    "author": "System",
+                    "message": "Task created",
+                    "createdAt": "1751892824000"
+                  }
+                ],
+                "assignedUsers": ["Jonathan Reyes"],
+                "files": [
+                  {
+                    "name": "README.md",
+                    "url": "/files/README.md"
+                  },
+                  {
+                    "name": "specs.pdf",
+                    "url": "/files/specs.pdf"
+                  }
+                ]
+              },
+              {
+                "id": "4ae10577-70bf-4875-ab49-8d703318cc8c",
+                "createdAt": "1751892824000",
+                "state": "Doing",
+                "title": "Write documentation",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
+                "comments": [
+                  {
+                    "author": "Manager",
+                    "message": "Please prioritize this task",
+                    "createdAt": "1751892824000"
+                  }
+                ],
+                "assignedUsers": ["Emily Zhao", "Chloe Kim"],
+                "files": []
+              }
+            ],
+            "color": "#46e13a"
           }
         ]
       },
@@ -1692,7 +1929,7 @@
             "createdAt": "1751892824000",
             "state": "Doing",
             "title": "Refactor dashboard component",
-            "description": "Coordinate with the QA team for testing.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
             "comments": [
               {
                 "author": "System",
@@ -1713,7 +1950,7 @@
             "createdAt": "1751892824000",
             "state": "Completed",
             "title": "Track user events",
-            "description": "This task is important for the upcoming milestone.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
             "comments": [
               {
                 "author": "System",
@@ -1738,7 +1975,7 @@
             "createdAt": "1751892824000",
             "state": "Doing",
             "title": "Add dark mode toggle",
-            "description": "Ensure all edge cases are handled properly.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
             "comments": [
               {
                 "author": "System",
@@ -1751,7 +1988,7 @@
                 "createdAt": "1751892824000"
               }
             ],
-            "assignedUsers": ["Aisha Singh", "Daniel Romero"],
+            "assignedUsers": ["Aisha Singh", "marcela"],
             "files": [
               {
                 "name": "ui-preview.png",
@@ -1768,7 +2005,7 @@
             "createdAt": "1751892824000",
             "state": "Completed",
             "title": "Translate app to Spanish",
-            "description": "This task is important for the upcoming milestone.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
             "comments": [
               {
                 "author": "System",
@@ -1798,7 +2035,7 @@
             "createdAt": "1751892824000",
             "state": "In Review",
             "title": "Migrate database to PostgreSQL",
-            "description": "Check cross-browser compatibility before closing.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
             "comments": [
               {
                 "author": "Manager",
@@ -1819,7 +2056,7 @@
             "createdAt": "1751892824000",
             "state": "Completed",
             "title": "Translate app to Spanish",
-            "description": "This task is important for the upcoming milestone.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
             "comments": [
               {
                 "author": "Manager",
@@ -1844,7 +2081,7 @@
             "createdAt": "1751892824000",
             "state": "Doing",
             "title": "Migrate database to PostgreSQL",
-            "description": "This task is important for the upcoming milestone.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
             "comments": [
               {
                 "author": "System",
@@ -1869,7 +2106,7 @@
             "createdAt": "1751892824000",
             "state": "Doing",
             "title": "Add unit tests to user service",
-            "description": "Check cross-browser compatibility before closing.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
             "comments": [
               {
                 "author": "QA",
@@ -1890,7 +2127,7 @@
             "createdAt": "1751892824000",
             "state": "To Do",
             "title": "Translate app to Spanish",
-            "description": "This task is important for the upcoming milestone.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
             "comments": [
               {
                 "author": "System",
@@ -1915,7 +2152,7 @@
             "createdAt": "1751892824000",
             "state": "Blocked",
             "title": "Update dependencies",
-            "description": "Ensure all edge cases are handled properly.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
             "comments": [
               {
                 "author": "Manager",
@@ -1945,7 +2182,7 @@
             "createdAt": "1751892824000",
             "state": "Doing",
             "title": "Write documentation",
-            "description": "Coordinate with the QA team for testing.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
             "comments": [
               {
                 "author": "Manager",
@@ -1961,7 +2198,7 @@
             "createdAt": "1751892824000",
             "state": "Doing",
             "title": "Clean up unused code",
-            "description": "Coordinate with the QA team for testing.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
             "comments": [
               {
                 "author": "System",
@@ -1977,7 +2214,7 @@
             "createdAt": "1751892824000",
             "state": "To Do",
             "title": "Create onboarding flow",
-            "description": "Check cross-browser compatibility before closing.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
             "comments": [
               {
                 "author": "Manager",
@@ -2007,7 +2244,7 @@
             "createdAt": "1751892824000",
             "state": "Doing",
             "title": "Write documentation",
-            "description": "Check cross-browser compatibility before closing.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
             "comments": [
               {
                 "author": "QA",
@@ -2023,7 +2260,7 @@
             "createdAt": "1751892824000",
             "state": "Completed",
             "title": "Validate email input",
-            "description": "Include proper accessibility attributes.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna.",
             "comments": [
               {
                 "author": "Manager",
@@ -2229,7 +2466,64 @@
         ]
       },
       "teams": {
-        "value": []
+        "value": [
+          {
+            "id": "bcb548ee-ea59-426d-8e8f-3104c250ee5d",
+            "name": "Marketing",
+            "members": ["Pepito perez", "Marcus Lin"],
+            "assignedTask": [
+              {
+                "id": "a1f8e715-7b23-47e7-94f1-11b2ef8d92b3",
+                "createdAt": "1755143187195",
+                "state": "Completed",
+                "title": "Design logo and branding",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan commodo lectus gravida dictum. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna. Aenean porta facilisis neque, ac dignissim magna vestibulum eu. Etiam id ligula eget neque placerat ultricies in sed neque. Nam vitae rutrum est. Etiam non condimentum ante, eu consequat orci. Aliquam a dui eu arcu hendrerit porta sed in velit. Fusce eu semper magna."
+              }
+            ]
+          },
+          {
+            "id": "f259471b-919e-40c3-b67e-fcbd082abfc2",
+            "name": "Design",
+            "members": ["Pepito perez", "Marcus Lin", "Chloe Kim"],
+            "assignedTask": []
+          },
+          {
+            "id": "5a811680-66ff-40ea-8a8e-d95a9fb29450",
+            "name": "Development",
+            "members": ["Elena Watson"],
+            "assignedTask": []
+          },
+          {
+            "id": "f7995eec-92e5-46b2-97bc-9f27cc4700a4",
+            "name": "QA",
+            "members": ["Elena Watson", "Sandra Novak"],
+            "assignedTask": []
+          },
+          {
+            "id": "b11843b8-8518-4fef-9b17-d2d3e0a4ea52",
+            "name": "Support",
+            "members": ["Sandra Novak", "Elena Watson"],
+            "assignedTask": []
+          },
+          {
+            "id": "a3465622-1f12-4a17-b654-a497b299fcec",
+            "name": "Customer Success",
+            "members": ["Jonathan Reyes"],
+            "assignedTask": []
+          },
+          {
+            "id": "dfbec46c-4c53-435d-9151-0680836fcb92",
+            "name": "UX",
+            "members": ["Jonathan Reyes", "Chloe Kim"],
+            "assignedTask": []
+          },
+          {
+            "id": "2a73eefa-77ff-4804-881b-b878c6164fbd",
+            "name": "Engineering",
+            "members": ["marcela"],
+            "assignedTask": []
+          }
+        ]
       },
       "files": {
         "value": []

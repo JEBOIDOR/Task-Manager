@@ -6,7 +6,7 @@ export const getProjects = async () => {
     const res = await axios.get("/projects", {
       headers: {
         "Content-Type": "application/json",
-        // Accept: "application/json"
+        Accept: "application/json",
       },
     });
     return res.data;

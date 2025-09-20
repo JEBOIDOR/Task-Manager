@@ -23,11 +23,9 @@ export interface Notification {
 
 //NOT REPEATED COMMENTS IN PROJECTS
 export interface Comment {
-  id: string;
+  author: string;
+  message: string;
   createdAt: string;
-  from: string; //full_name
-  in: string; // project_name
-  comment: string;
 }
 
 export interface User {
@@ -58,7 +56,7 @@ export interface Team {
 
 export interface Task {
   id: string | `${string}-${string}-${string}-${string}-${string}`;
-  date: Date;
+  date: string;
   state: "Doing" | "Completed" | "In Review";
   title: string;
   description: string;

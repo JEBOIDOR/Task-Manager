@@ -12,45 +12,18 @@
     Design
     Marketing
     Support
-    Product
     Customer Success
     UX
     Engineering
-    Analytics
-    HR
-    Operations
-    DevOps
-    Backend
-    Business
-    Tech Leads
+
 
 📁///PROJECTS///
     Taskly
-    Quantor
-    Vizscope
-    Planwise
     Dashbit
-    Syncvault
+    Planwise
     FocusNest
-    MetricNest
-    Neurobit
     Mindtrail
-    Pulseframe
-    Datavue
-    DailyFlux
-    Flowgrid
-    Corely
-    DoneHub
-    Insightra
-    Smartbatch
-    GoalForge
-    Endpointr
-    Backflow
-    Servix
-    RestifyHub
-    Jetcore
-    Nodeflux
-    CogniLink
+    Neurobit
 
 👤///USERS///
     Elena Watson
@@ -63,3 +36,8 @@
     Liam Carter
     Emily Zhao
     Noah Fernández
+
+
+--> Menu de notificaciones que salga en el mismo marco del resto de las acciones 
+--> Menu de mensajes que ocupe el espacio completo de la sidebar
+--> Menu de ajustes que ocupe todo el espacio de la app como un panel de permisos

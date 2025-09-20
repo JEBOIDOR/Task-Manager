@@ -24,17 +24,17 @@ export const variants = {
 
 export const userProfileActions = [
   {
-    icon: "ic:round-settings",
-    styles: "r-full relative bg-button",
+    icon: "material-symbols:settings-rounded",
+    styles: "full-r relative bg-button",
   },
   {
     icon: "lets-icons:message-alt-fill",
-    styles: "r-full relative bg-button",
-    indicator: "r-full top right icons-userInfo fxx-small f-w-700 t-smaller",
+    styles: "full-r relative bg-button",
+    indicator: "full-r top right icons-userInfo fxx-small f-w-700 t-smaller",
   },
   {
-    icon: "mdi:bell",
-    styles: "r-full relative bg-button",
-    indicator: "r-full top right icons-userInfo fxx-small f-w-700 t-smaller",
+    icon: "line-md:bell-alert-filled-loop",
+    styles: "full-r relative bg-button",
+    indicator: "full-r top right icons-userInfo fxx-small f-w-700 t-smaller",
   },
 ];

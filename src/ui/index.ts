@@ -5,3 +5,5 @@ export { Indicator } from "./Indicator";
 export { Separator } from "./Separator";
 export { Typography } from "./Typography";
 export { Wrapper } from "./Wrapper";
+export { Switch } from "./Switch";
+export { ColorPicker } from "./ColorPicker";
